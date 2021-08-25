@@ -2,6 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import TodoItem from "./TodoItem";
 
+//Object with styles
 const styles = {
   ul: {
     listStyle: "none",
@@ -27,6 +28,7 @@ function TodoList(props) {
   );
 }
 
+//Validation
 TodoList.propTypes = {
   todos: PropTypes.arrayOf(PropTypes.object).isRequired,
   onToggle: PropTypes.func.isRequired,

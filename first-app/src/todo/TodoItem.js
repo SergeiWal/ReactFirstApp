@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import PropTypes from "prop-types";
 import Context from "../context";
 
+//Object with styles
 const styles = {
   li: {
     display: "flex",
@@ -20,6 +21,7 @@ const styles = {
 function TodoItem({ todo, index, onChange }) {
   const { removeTodo } = useContext(Context);
 
+  //Array for css classes
   const classes = [];
 
   if (todo.complited) {
@@ -48,6 +50,7 @@ function TodoItem({ todo, index, onChange }) {
   );
 }
 
+//Validation
 TodoItem.propTypes = {
   todo: PropTypes.object.isRequired,
   index: PropTypes.number,

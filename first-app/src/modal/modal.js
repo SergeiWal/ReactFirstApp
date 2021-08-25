@@ -2,6 +2,7 @@ import React from "react";
 import "./modalstyle.css";
 
 export default class Modal extends React.Component {
+  //Create state without hooks
   state = {
     isOpen: false,
   };

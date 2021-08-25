@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 
+//my custom hook
 function useInputValue(defaultValue = "") {
+  //Use state variable with hooks
   const [value, setValue] = useState(defaultValue);
 
   return {
@@ -15,6 +17,7 @@ function useInputValue(defaultValue = "") {
 }
 
 function AddTodo({ onCreate }) {
+  //invoke my custom hook
   const input = useInputValue("");
   function submitHandler(event) {
     event.preventDefault();
@@ -32,6 +35,7 @@ function AddTodo({ onCreate }) {
   );
 }
 
+//Add validation
 AddTodo.propTypes = {
   onCreate: PropTypes.func.isRequired,
 };

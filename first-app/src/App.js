@@ -1,10 +1,10 @@
 import React, { useEffect } from "react";
 import TodoList from "./todo/TodoList";
 import Context from "./context";
-import { func } from "prop-types";
 import Loader from "./loader";
 import Modal from "./modal/modal";
 
+//Lazy loading
 const AddTodo = React.lazy(
   () =>
     new Promise((resolve) => {
@@ -15,9 +15,11 @@ const AddTodo = React.lazy(
 );
 
 function App() {
+  //Statemeths with hook "useState"
   const [todos, setTodos] = React.useState([]);
   const [loading, setLoading] = React.useState(true);
 
+  //Require to server
   useEffect(() => {
     fetch("https://jsonplaceholder.typicode.com/todos?_limit=5")
       .then((response) => response.json())
@@ -29,6 +31,7 @@ function App() {
       });
   }, []);
 
+  //Set checbox
   function toggleTodo(id) {
     setTodos(
       todos.map((todo) => {
